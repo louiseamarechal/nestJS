@@ -9,8 +9,7 @@ export class AuthService {
 
     constructor(private prisma: PrismaService) {}
 
-    signup(@Req() req: Request) {
-
+    signup() {
         return { msg: 'I have signed up' };
     }
     
