@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthDto = void 0;
-const class_validator_1 = require("class-validator");
-class AuthDto {
-}
+exports.UserController = void 0;
+const common_1 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
+let UserController = class UserController {
+    getMe() {
+        return ("user info");
+    }
+};
 __decorate([
-    (0, class_validator_1.IsEmail)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], AuthDto.prototype, "email", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], AuthDto.prototype, "password", void 0);
-exports.AuthDto = AuthDto;
-//# sourceMappingURL=auth.dto.js.map
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
+    (0, common_1.Get)('me'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "getMe", null);
+UserController = __decorate([
+    (0, common_1.Controller)('users')
+], UserController);
+exports.UserController = UserController;
+//# sourceMappingURL=user.controller.js.map

@@ -3,10 +3,10 @@ import { AuthDto } from "./dto/auth.dto";
 export declare class AuthController {
     private authService;
     constructor(authService: AuthService);
-    signup(dto: AuthDto): {
-        msg: string;
-    };
-    signin(): {
-        msg: string;
-    };
+    signup(dto: AuthDto): Promise<{
+        access_token: string;
+    }>;
+    signin(dto: AuthDto): Promise<{
+        access_token: string;
+    }>;
 }
