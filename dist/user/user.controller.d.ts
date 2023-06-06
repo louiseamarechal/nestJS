@@ -1,3 +1,5 @@
+import { User } from '@prisma/client';
 export declare class UserController {
-    getMe(): string;
+    getMe(user: User): User;
+    editUser(): void;
 }
