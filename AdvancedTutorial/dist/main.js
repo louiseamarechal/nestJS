@@ -9,7 +9,7 @@ async function bootstrap() {
         whitelist: true,
     }));
     const corsOptions = {
-        allowedHeaders: ['content-type'],
+        allowedHeaders: ['content-type', 'Authorization'],
         credentials: true,
         origin: ['http://localhost:3000'],
     };

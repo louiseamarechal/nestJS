@@ -16,7 +16,7 @@ const argon = require("argon2");
 const client_1 = require("@prisma/client");
 const jwt_1 = require("@nestjs/jwt");
 const config_1 = require("@nestjs/config");
-let AuthService = class AuthService {
+let AuthService = exports.AuthService = class AuthService {
     constructor(prisma, jwt, config) {
         this.prisma = prisma;
         this.jwt = jwt;
@@ -67,16 +67,18 @@ let AuthService = class AuthService {
             expiresIn: '15m',
             secret: secret,
         });
+        console.log({
+            access_token: token,
+        });
         return {
             access_token: token,
         };
     }
 };
-AuthService = __decorate([
+exports.AuthService = AuthService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [prisma_service_1.PrismaService,
         jwt_1.JwtService,
         config_1.ConfigService])
 ], AuthService);
-exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map

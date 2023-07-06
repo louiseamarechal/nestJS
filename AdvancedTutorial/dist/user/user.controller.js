@@ -16,7 +16,7 @@ exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const get_user_decorator_1 = require("../auth/decorator/get-user.decorator");
 const guard_1 = require("../auth/guard");
-let UserController = class UserController {
+let UserController = exports.UserController = class UserController {
     getMe(user) {
         return user;
     }
@@ -36,8 +36,7 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "editUser", null);
-UserController = __decorate([
+exports.UserController = UserController = __decorate([
     (0, common_1.Controller)('users')
 ], UserController);
-exports.UserController = UserController;
 //# sourceMappingURL=user.controller.js.map

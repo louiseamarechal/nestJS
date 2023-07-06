@@ -13,7 +13,7 @@ exports.PrismaService = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const client_1 = require("@prisma/client");
-let PrismaService = class PrismaService extends client_1.PrismaClient {
+let PrismaService = exports.PrismaService = class PrismaService extends client_1.PrismaClient {
     constructor(config) {
         super({
             datasources: {
@@ -24,9 +24,8 @@ let PrismaService = class PrismaService extends client_1.PrismaClient {
         });
     }
 };
-PrismaService = __decorate([
+exports.PrismaService = PrismaService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [config_1.ConfigService])
 ], PrismaService);
-exports.PrismaService = PrismaService;
 //# sourceMappingURL=prisma.service.js.map

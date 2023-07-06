@@ -88,6 +88,9 @@ export class AuthService {
             },
         );
 
+        console.log({
+            access_token: token,
+        });
         return {
             access_token: token,
         };
